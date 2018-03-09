@@ -13,7 +13,8 @@ angular.module('ui.mask', [])
             escChar: '\\',
             eventsToHandle: ['input', 'keyup', 'click', 'focus'],
             addDefaultPlaceholder: true,
-            allowInvalidValue: false
+            allowInvalidValue: false,
+            ignoreBlurEvent: false
         })
         .provider('uiMask.Config', function() {
             var options = {};
@@ -254,7 +255,7 @@ angular.module('ui.mask', [])
                                 if (eventsBound) {
                                     return;
                                 }
-                                iElement.bind('blur', blurHandler);
+                                !linkOptions.ignoreBlurEvent && iElement.bind('blur', blurHandler);
                                 iElement.bind('mousedown mouseup', mouseDownUpHandler);
                                 iElement.bind('keydown', keydownHandler);
                                 iElement.bind(linkOptions.eventsToHandle.join(' '), eventHandler);
