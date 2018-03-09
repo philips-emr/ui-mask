@@ -1,7 +1,7 @@
 /*!
  * angular-ui-mask
  * https://github.com/angular-ui/ui-mask
- * Version: 1.8.7 - 2016-07-26T15:59:07.992Z
+ * Version: 1.8.8 - 2018-03-09T18:19:53.029Z
  * License: MIT
  */
 
@@ -23,7 +23,8 @@ angular.module('ui.mask', [])
             escChar: '\\',
             eventsToHandle: ['input', 'keyup', 'click', 'focus'],
             addDefaultPlaceholder: true,
-            allowInvalidValue: false
+            allowInvalidValue: false,
+            ignoreBlurEvent: false
         })
         .provider('uiMask.Config', function() {
             var options = {};
@@ -264,7 +265,7 @@ angular.module('ui.mask', [])
                                 if (eventsBound) {
                                     return;
                                 }
-                                iElement.bind('blur', blurHandler);
+                                !linkOptions.ignoreBlurEvent && iElement.bind('blur', blurHandler);
                                 iElement.bind('mousedown mouseup', mouseDownUpHandler);
                                 iElement.bind('keydown', keydownHandler);
                                 iElement.bind(linkOptions.eventsToHandle.join(' '), eventHandler);
