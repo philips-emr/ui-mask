@@ -68,6 +68,7 @@ Inside of `ui-options`, you can customize these five properties:
 * `addDefaultPlaceholder` - default: `true`
 * `escChar` - default: `'\\'`
 * `allowInvalidValue` - default: `false`
+* `igoreBlurEvent` - default: `false` // whether to ignore the internal blur event
 
 When customizing `eventsToHandle`, `clearOnBlur`, or `addDefaultPlaceholder`, the value you supply will replace the default. To customize `eventsToHandle`, be sure to replace the entire array.
 
