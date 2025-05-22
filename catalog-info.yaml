@@ -1,0 +1,13 @@
+# yamllint disable-file
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "ui-mask"
+  description: "Apply a mask on an input field so the user can only type pre-determined pattern."
+  title: "ui-mask"
+  tags:
+    - emr
+spec:
+  type: "library"
+  owner: "group:default/emr-eisenbahn-contributors"
+  lifecycle: "production"
